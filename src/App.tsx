@@ -13,6 +13,7 @@ import Toast from 'react-native-toast-message';
 import {Button} from './components/Button/Button';
 import {NfcViewer} from './components/NfcViewer/NfcViewer';
 import {NoSupportedDevice} from './components/NoSupportedDevice/NoSupportedDevice';
+import RNBootSplash from 'react-native-bootsplash';
 
 export default function App() {
   const [hasNfcSupport, setHasNfcSupport] = useState<boolean>(false);
@@ -31,10 +32,12 @@ export default function App() {
           text1: 'You device is not able to use NFC',
           position: 'bottom',
         });
+        await RNBootSplash.hide({fade: true, duration: 500});
         return;
       }
 
       setHasNfcSupport(true);
+      await RNBootSplash.hide({fade: true, duration: 500});
     };
 
     checkNFCIsSupported();

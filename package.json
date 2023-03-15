@@ -13,6 +13,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.71.4",
+    "react-native-bootsplash": "^4.5.3",
     "react-native-nfc-manager": "^3.14.2",
     "react-native-toast-message": "^2.1.6"
   },

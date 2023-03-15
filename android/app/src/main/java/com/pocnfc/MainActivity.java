@@ -1,5 +1,8 @@
 package com.pocnfc;
 
+import android.os.Bundle;
+import com.zoontek.rnbootsplash.RNBootSplash;
+
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
@@ -14,6 +17,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "PocNfc";
+  }
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    RNBootSplash.init(this); // <- initialize the splash screen
+    super.onCreate(savedInstanceState); // or super.onCreate(null) with react-native-screens
   }
 
   /**
